@@ -7,7 +7,7 @@ s = socket(AF_INET, SOCK_DGRAM)
 s.bind(("", PORT))
 print("The UDP receiver is ready to receive")
 
-API_URL = ""
+API_URL = "https://localhost:7220/api/readings"
 
 
 # Function that gets called once a UDP-Packet is received, and the message parsed.
