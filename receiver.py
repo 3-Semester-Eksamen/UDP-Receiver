@@ -7,7 +7,7 @@ s = socket(AF_INET, SOCK_DGRAM)
 s.bind(("", PORT))
 print("The UDP receiver is ready to receive")
 
-API_URL = "https://localhost:7220/api/readings"
+API_URL = "https://xn--lsrest-iua.azurewebsites.net/api/readings/"
 
 
 # Function that gets called once a UDP-Packet is received, and the message parsed.
@@ -20,7 +20,7 @@ def handle_msg(msg):
 def post_api(data):
     print(data)
     if API_URL:
-        requests.post(API_URL, json=data)
+        requests.post(API_URL, json=data, verify=False)
 
 
 while True:
